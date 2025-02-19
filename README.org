@@ -1,0 +1,35 @@
+# -*- mode: org; coding: utf-8-unix; org-crypt-key: nil -*-
+#+SEQ_TODO: TODO(t) INPROGRESS(i) DEPENDENCIES(D@/!) | DONE(d) CANCELLED(c@/!)
+#+STARTUP: hidestars content lognoterepeat lognotereschedule lognoteredeadline lognoterefile lognoteclock-out lognotedone
+#+PRIORITIES: 1 5 3 BLOCK(1) CRITICAL(2) MAJOR(3) MINOR(4) TRIVIAL(5)
+#+TITLE: NativeTrainerPlus
+#+AUTHOR: Tianchen
+#+OPTIONS: author:t date:t
+#+OPTIONS: timestamp:t toc:t creator:t ':t
+* Intro
+
+  Modified from Alexander Blade's [[https://ntscorp.ru/dev-c/ScriptHookV_SDK_1.0.617.1a.zip][ScriptHookV and NativeTrainer]] for
+  GTA 5 modding. The original version was v1.0.3411.0
+
+* Features
+
+  - Additional Vim-style Navigation on menu
+  - Default values can be modified
+
+* TODOs
+
+** TODO [#3] Default values from ini/sqlite
+** [#4] Feasibility to add imgui
+
+* Reference
+
+  - https://www.dev-c.com/gtav/scripthookv/
+  - https://www.gta5-mods.com/tools/script-hook-v
+
+# Local Variables:
+# mode: org
+# coding: utf-8-unix
+# org-crypt-key: nil
+# eval: (set-visual-wrap-column 100)
+# eval: (toggle-truncate-lines t)
+# End:
