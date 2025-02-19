@@ -107,12 +107,12 @@ bool trainer_switch_pressed()
 
 void get_button_state(bool *a, bool *b, bool *up, bool *down, bool *l, bool *r)
 {
-	if (a) *a = IsKeyDown(VK_NUMPAD5);
+	if (a) *a = IsKeyDown(VK_NUMPAD5) || IsKeyDown(VK_RETURN);
 	if (b) *b = IsKeyDown(VK_NUMPAD0) || trainer_switch_pressed() || IsKeyDown(VK_BACK);
-	if (up) *up = IsKeyDown(VK_NUMPAD8);
-	if (down) *down = IsKeyDown(VK_NUMPAD2);
-	if (r) *r = IsKeyDown(VK_NUMPAD6);
-	if (l) *l = IsKeyDown(VK_NUMPAD4);
+	if (up) *up = IsKeyDown(VK_NUMPAD8) || IsKeyDown('K');
+	if (down) *down = IsKeyDown(VK_NUMPAD2) || IsKeyDown('J');
+	if (r) *r = IsKeyDown(VK_NUMPAD6) || IsKeyDown('L');
+	if (l) *l = IsKeyDown(VK_NUMPAD4) || IsKeyDown('H');
 }
 
 void menu_beep()
