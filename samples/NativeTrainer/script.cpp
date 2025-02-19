@@ -1981,9 +1981,14 @@ void reset_globals()
 	activeLineIndexWorld		=
 	activeLineIndexWeather		=	0;
 
+	featurePlayerNeverWanted            = 
+	featureWeaponNoReload               = 
+	featureVehInvincible                =
+	featureTimePaused                   = true;
+
 	featurePlayerInvincible				=
 	featurePlayerInvincibleUpdated		=
-	featurePlayerNeverWanted			=
+	//featurePlayerNeverWanted			=
 	featurePlayerIgnored				=
 	featurePlayerIgnoredUpdated			=
 	featurePlayerUnlimitedAbility		=
@@ -1994,12 +1999,12 @@ void reset_globals()
 	featurePlayerFastRun				=
 	featurePlayerFastRunUpdated			=
 	featurePlayerSuperJump				=
-	featureWeaponNoReload				=
+	//featureWeaponNoReload				=
 	featureWeaponFireAmmo				=
 	featureWeaponExplosiveAmmo			=
 	featureWeaponExplosiveMelee			=
 	featureWeaponVehRockets				=
-	featureVehInvincible				=
+	//featureVehInvincible				=
 	featureVehInvincibleUpdated			=
 	featureVehInvincibleWheels			=
 	featureVehInvincibleWheelsUpdated	=
@@ -2008,7 +2013,7 @@ void reset_globals()
 	featureVehSpeedBoost				=
 	featureVehWrapInSpawned				=
 	featureWorldMoonGravity				=
-	featureTimePaused					=
+	//featureTimePaused					=
 	featureTimePausedUpdated			=
 	featureTimeSynced					=
 	featureWeatherWind					=
