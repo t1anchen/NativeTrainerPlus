@@ -1,0 +1,2 @@
+#define NATIVETRAINERPLUSHELPER_API __declspec(dllexport)
+#define NATIVETRAINERPLUSHELPER_API __declspec(dllimport)

@@ -1,8 +1,11 @@
 ﻿#include "ntp/DateTime.h"
 #include <numeric>
+#include <string>
+#include <iomanip>
+#include <sstream>
 
 namespace NTP {
-    
+
     DateTime DateTime::operator+(DateTime const& other)
     {
         int carry = 0;
@@ -23,5 +26,14 @@ namespace NTP {
         carry = dv.quot;
         result.hour_ = dv.rem;
         return result;
+    }
+    std::string DateTime::to_string() const {
+        std::ostringstream oss;
+        oss << std::setfill('0') << std::setw(4) << year_;
+        return oss.str();
+    }
+    std::ostream& operator<< (std::ostream& out, DateTime& dt) {
+        out << dt.to_string();
+        return out;
     }
 }
