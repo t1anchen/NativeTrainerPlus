@@ -2,7 +2,7 @@
 #include <string>
 
 namespace NTP {
-    class __declspec(dllexport) DateTime
+    class DateTime
     {
     public:
         DateTime(int year = 0, int month = 0, int day = 0, int hour = 0, int minute = 0, int second = 0) : year_(year), month_(month), day_(day), hour_(hour), minute_(minute), second_(second) {};

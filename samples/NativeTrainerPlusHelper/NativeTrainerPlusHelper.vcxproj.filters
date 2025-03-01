@@ -27,26 +27,11 @@
     <ClInclude Include="include\framework.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="NativeTrainerPlusHelper.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="include\pch.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\ntp\DateTime.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="NativeTrainerPlusHelper.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="dllmain.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pch.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\ntp\DateTime.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
