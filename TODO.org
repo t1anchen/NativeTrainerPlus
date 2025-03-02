@@ -1,0 +1,16 @@
+# -*- mode: org; coding: utf-8-unix; org-crypt-key: nil -*-
+#+SEQ_TODO: TODO(t) INPROGRESS(i) DEPENDENCIES(D@/!) | DONE(d) CANCELLED(c@/!)
+#+STARTUP: hidestars content lognoterepeat lognotereschedule lognoteredeadline lognoterefile lognoteclock-out lognotedone
+#+PRIORITIES: 1 5 3 BLOCK(1) CRITICAL(2) MAJOR(3) MINOR(4) TRIVIAL(5)
+* Feature
+** TODO [#3] Default values from ini/sqlite
+** [#3] Customized car paint color
+- Note taken on [2025-03-03 Mon 00:18:58+08:00] \\
+  at least two colours, primary and secondary
+- Note taken on [2025-03-03 Mon 00:13:09+08:00] \\
+  Does it require a UI to display palette?
+  Or simply choose by name?
+** [#3] Feasibility to add imgui
+- Note taken on [2025-03-03 Mon 00:20:22+08:00] \\
+  considering reshader is loaded, is it possibly conflict if another dll
+  is loading imgui? or simply bake it to NTP

@@ -16,11 +16,6 @@
   - Additional Vim-style Navigation on menu
   - Default values can be modified
 
-* TODOs
-
-** TODO [#3] Default values from ini/sqlite
-** [#4] Feasibility to add imgui
-
 * Reference
 
   - https://www.dev-c.com/gtav/scripthookv/
