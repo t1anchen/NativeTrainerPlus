@@ -22,7 +22,7 @@ namespace NTP {
         result.minute_ = dv.rem;
 
         // hour
-        dv = std::div(hour_ + other.hour_ + carry, 60);
+        dv = std::div(hour_ + other.hour_ + carry, 24);
         carry = dv.quot;
         result.hour_ = dv.rem;
         return result;
@@ -30,6 +30,16 @@ namespace NTP {
     std::string DateTime::to_string() const {
         std::ostringstream oss;
         oss << std::setfill('0') << std::setw(4) << year_;
+        oss << "-";
+        oss << std::setfill('0') << std::setw(2) << month_;
+        oss << "-";
+        oss << std::setfill('0') << std::setw(2) << day_;
+        oss << "T";
+        oss << std::setfill('0') << std::setw(2) << hour_;
+        oss << ":";
+        oss << std::setfill('0') << std::setw(2) << minute_;
+        oss << ":";
+        oss << std::setfill('0') << std::setw(2) << second_;
         return oss.str();
     }
     std::ostream& operator<< (std::ostream& out, DateTime& dt) {
