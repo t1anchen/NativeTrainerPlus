@@ -1,8 +1,10 @@
 ﻿#pragma once
+#include "api.h"
+#include <iostream>
 #include <string>
 
 namespace NTP {
-    class DateTime
+    class NATIVETRAINERPLUSHELPER_API DateTime
     {
     public:
         DateTime(int year = 0, int month = 0, int day = 0, int hour = 0, int minute = 0, int second = 0) : year_(year), month_(month), day_(day), hour_(hour), minute_(minute), second_(second) {};
@@ -10,6 +12,7 @@ namespace NTP {
         DateTime operator+(DateTime const& other);
         DateTime operator-(DateTime const& other);
         DateTime operator-() const;
+        DateTime& operator+=(DateTime const& other);
         std::string to_string() const;
         friend std::ostream& operator<< (std::ostream& out, DateTime& dt);
         int year() const { return year_; };

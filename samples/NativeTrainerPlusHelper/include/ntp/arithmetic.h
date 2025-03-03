@@ -1,11 +1,10 @@
 ﻿#pragma once
-#include <numeric>
+#include "api.h"
 
-div_t floordiv(int a, int b) {
-    div_t dv = std::div(a, b);
-    if (dv.rem < 0) {
-        dv.rem += b;
-        dv.quot -= 1;
-    }
-    return dv;
+namespace NTP {
+    struct NATIVETRAINERPLUSHELPER_API floordiv_t {
+        int quot;
+        int rem;
+    };
+    floordiv_t NATIVETRAINERPLUSHELPER_API floordiv(int a, int b);
 }

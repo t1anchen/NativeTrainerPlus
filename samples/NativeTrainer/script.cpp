@@ -1,4 +1,4 @@
-/*
+﻿/*
 	THIS FILE IS A PART OF GTA V SCRIPT HOOK SDK
 				http://dev-c.com			
 			(C) Alexander Blade 2015
@@ -18,6 +18,8 @@
 
 #include <string>
 #include <ctime>
+
+#include <ntp/DateTime.h>
 
 #pragma warning(disable : 4244 4305) // double <-> float conversions
 
@@ -1664,12 +1666,23 @@ void process_time_menu()
 			case 0: 
 			case 1:
 				{
-					int h = TIME::GET_CLOCK_HOURS();
-					if (activeLineIndexTime == 0) h = (h == 23) ? 0 : h + 1; else h = (h == 0) ? 23 : h - 1;
-					int m = TIME::GET_CLOCK_MINUTES();
-					TIME::SET_CLOCK_TIME(h, m, 0);
+					//int h = TIME::GET_CLOCK_HOURS();
+					//if (activeLineIndexTime == 0) h = (h == 23) ? 0 : h + 1; else h = (h == 0) ? 23 : h - 1;
+					//int m = TIME::GET_CLOCK_MINUTES();
+					//TIME::SET_CLOCK_TIME(h, m, 0);
+                int year = TIME::GET_CLOCK_YEAR();
+                int month = TIME::GET_CLOCK_MONTH();
+                int day = TIME::GET_CLOCK_DAY_OF_MONTH();
+                int hour = TIME::GET_CLOCK_HOURS();
+                int minute = TIME::GET_CLOCK_MINUTES();
+                NTP::DateTime dt{ year,month,day,hour,minute,0 };
+				NTP::DateTime delta{ 0,0,0,1,0,0 };
+				dt += delta;
+				TIME::SET_CLOCK_DATE(dt.day(), dt.month(), dt.year());
+				TIME::SET_CLOCK_TIME(dt.hour(), dt.minute(), dt.second());
+
 					char text[32];
-					sprintf_s(text, "time %d:%d", h, m);
+					sprintf_s(text, "time %d:%d", dt.hour(), dt.minute());
 					set_status_text(text);
 				}
 				break;

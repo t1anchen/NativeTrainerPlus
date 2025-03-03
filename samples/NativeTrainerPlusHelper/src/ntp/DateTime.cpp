@@ -1,31 +1,33 @@
-﻿#include "ntp/DateTime.h"
+﻿#include "ntp/api.h"
+#include "pch.h"
+#include "ntp/DateTime.h"
 #include <numeric>
 #include <string>
 #include <iomanip>
 #include <sstream>
 #include "ntp/arithmetic.h"
 
+
 namespace NTP {
 
-    DateTime DateTime::operator+(DateTime const& other)
+    DateTime& DateTime::operator+=(DateTime const& other)
     {
         int carry = 0;
-        DateTime result;
 
         // second
         auto dv = floordiv(second_ + other.second_, 60);
         carry = dv.quot;
-        result.second_ = dv.rem;
+        second_ = dv.rem;
 
         // minute
         dv = floordiv(minute_ + other.minute_ + carry, 60);
         carry = dv.quot;
-        result.minute_ = dv.rem;
+        minute_ = dv.rem;
 
         // hour
         dv = floordiv(hour_ + other.hour_ + carry, 24);
         carry = dv.quot;
-        result.hour_ = dv.rem;
+        hour_ = dv.rem;
         int carry_orig = carry;
 
         dv = floordiv(day_ + other.day_ + carry, 32);
@@ -66,17 +68,23 @@ namespace NTP {
         // day
         dv = floordiv(day_ + other.day_ + carry, max_days_in_a_month+1);
         carry = ((dv.quot == 0) && (dv.rem == 0)) ? carry : dv.quot;
-        result.day_ = (dv.rem == 0) ? ((dv.quot == 0) ? 31 : 1) : dv.rem;
+        day_ = (dv.rem == 0) ? ((dv.quot == 0) ? 31 : 1) : dv.rem;
 
         // month (2nd)
         dv = floordiv(month_ + other.month_ + carry, 13);
         carry = ((dv.quot == 0) && (dv.rem == 0)) ? carry : dv.quot;
-        result.month_ = (dv.rem == 0) ? ((dv.quot == 0) ? 12 : 1) : dv.rem;
+        month_ = (dv.rem == 0) ? ((dv.quot == 0) ? 12 : 1) : dv.rem;
 
         // year (2nd)
         dv = floordiv(year_ + other.year_ + carry, 9999);
-        result.year_ = dv.rem;
+        year_ = dv.rem;
 
+        return *this;
+    }
+
+    DateTime DateTime::operator+(DateTime const& other) {
+        DateTime result{ *this };
+        result += other;
         return result;
     }
     
