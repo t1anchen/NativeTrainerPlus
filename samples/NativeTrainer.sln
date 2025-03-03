@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NativeTrainerPlusHelper", "
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NTPUnitTest", "NTPUnitTest\NTPUnitTest.vcxproj", "{162BDC31-42B6-7B32-985E-B072EF7FE1E0}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NTPUITest", "NTPUITest\NTPUITest.vcxproj", "{961CE64E-4205-43AF-854F-5210483EE77A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Release|x64 = Release|x64
@@ -27,6 +29,10 @@ Global
 		{162BDC31-42B6-7B32-985E-B072EF7FE1E0}.Release|x64.Build.0 = Release|x64
 		{162BDC31-42B6-7B32-985E-B072EF7FE1E0}.Test|x64.ActiveCfg = Debug|x64
 		{162BDC31-42B6-7B32-985E-B072EF7FE1E0}.Test|x64.Build.0 = Debug|x64
+		{961CE64E-4205-43AF-854F-5210483EE77A}.Release|x64.ActiveCfg = Release|x64
+		{961CE64E-4205-43AF-854F-5210483EE77A}.Release|x64.Build.0 = Release|x64
+		{961CE64E-4205-43AF-854F-5210483EE77A}.Test|x64.ActiveCfg = Debug|x64
+		{961CE64E-4205-43AF-854F-5210483EE77A}.Test|x64.Build.0 = Debug|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

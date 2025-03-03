@@ -193,6 +193,8 @@ samples/NativeTrainer/bin
 samples/NativeTrainer/tmp
 samples/NativeTrainerPlusHelper/bin
 samples/NativeTrainerPlusHelper/tmp
+samples/NTPUITest/bin
+samples/NTPUITest/tmp
 samples/NTPUnitTest/bin
 samples/NTPUnitTest/tmp
 samples/.vs/
