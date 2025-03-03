@@ -8,23 +8,25 @@ namespace NTP {
         DateTime(int year = 0, int month = 0, int day = 0, int hour = 0, int minute = 0, int second = 0) : year_(year), month_(month), day_(day), hour_(hour), minute_(minute), second_(second) {};
         ~DateTime() {};
         DateTime operator+(DateTime const& other);
+        DateTime operator-(DateTime const& other);
+        DateTime operator-() const;
         std::string to_string() const;
         friend std::ostream& operator<< (std::ostream& out, DateTime& dt);
         int year() const { return year_; };
         void set_year(const int other) {
-            if (1 <= other && other <= 9999) {
+            if (0 <= other && other <= 9999) {
                 year_ = other;
             }
         }
         int month() const { return month_; };
         void set_month(const int other) {
-            if (1 <= other && other <= 12) {
+            if (0 <= other && other <= 12) {
                 month_ = other;
             }
         }
         int day() const { return day_; };
         void set_day(const int other) {
-            if (1 <= other && other <= 31) {
+            if (0 <= other && other <= 31) {
                 day_ = other;
             }
         }
@@ -55,6 +57,10 @@ namespace NTP {
             set_hour(hour);
             set_minute(minute);
             set_second(second);
+        }
+        inline void set_datetime(const int year, const int month, const int day, const int hour, const int minute, const int second) {
+            set_date(year, month, day);
+            set_time(hour, minute, second);
         }
     private:
         int year_;

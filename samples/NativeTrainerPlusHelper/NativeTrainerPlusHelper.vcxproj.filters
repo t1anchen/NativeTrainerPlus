@@ -30,6 +30,9 @@
     <ClInclude Include="include\ntp\DateTime.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\ntp\arithmetic.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\ntp\DateTime.cpp">
